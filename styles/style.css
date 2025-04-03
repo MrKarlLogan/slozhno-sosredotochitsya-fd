@@ -15,6 +15,7 @@
 
 .header {
   min-block-size: 40.5rem;
+  /* block-size: 100vh; Всё плывет / я не понимаю, это баг девтула или что-то ещё. Но никак не спозиционировать по этому свойствую. Всё уезжает явно ниже, чем должно. */
   display: grid;
   grid-template-columns: 1fr;
   position: relative;
@@ -80,7 +81,6 @@
 
 .header__theme-menu-button {
   background-color: transparent;
-  border: none;
   padding-inline: 0.72em;
   text-transform: lowercase;
   border: 0.06em solid transparent;
@@ -202,6 +202,7 @@
 }
 
 .footer {
+  /* block-size: 100vh; Всё плывет / я не понимаю, это баг девтула или что-то ещё. Но никак не спозиционировать по этому свойствую. Всё уезжает явно ниже, чем должно. */
   min-block-size: 40.5rem;
   margin-block-start: 2.6em;
   display: grid;
@@ -378,19 +379,19 @@
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .content__section:nth-of-type(even) .card .card__list:first-child{
+  .content__section:nth-of-type(even) .card .card__list:first-child {
     grid-column: 1;
   }
 
-  .content__section:nth-of-type(even) .card .card__list:nth-last-child(2){
+  .content__section:nth-of-type(even) .card .card__list:nth-last-child(2) {
     grid-column: 2;
   }
 
-  .content__section:nth-of-type(even) .card .card__list:last-child{
+  .content__section:nth-of-type(even) .card .card__list:last-child {
     grid-column: 3;
   }
 
-  .content__section:nth-of-type(even) .card{
+  .content__section:nth-of-type(even) .card {
     word-break: break-word;
     gap: 1.11em;
   }
