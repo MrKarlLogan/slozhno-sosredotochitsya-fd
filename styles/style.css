@@ -88,7 +88,7 @@
   line-height: 1em;
   color: var(--other-color, #FF0070);
   background-color: transparent;
-  padding-inline: .72em;    
+  padding-inline: .72em;
   padding-block: .10em;
   text-transform: lowercase;
   border: .06em solid transparent;
@@ -388,7 +388,7 @@
     margin: 0;
   }
 
-  .header__theme-menu-button {  
+  .header__theme-menu-button {
     padding-block: .12em;
   }
 
