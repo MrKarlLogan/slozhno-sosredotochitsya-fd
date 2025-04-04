@@ -7,11 +7,11 @@
   --text-color: #F1B2CE;
   --other-color: var(--accent-color);
   --border-hover: 255 0 112;
-  --border-opacity: 0.4;
+  --border-opacity: .4;
   --font-family: 'IBM Plex mono';
   --font-size: 1.125rem;
   --bg-image: url(../images/cover-image-dark.png);
-  --padding-page: 0.55em;
+  --padding-page: .55em;
   --line-height: 1.3em;
   --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
