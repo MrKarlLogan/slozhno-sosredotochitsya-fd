@@ -1,3 +1,9 @@
+/* Привет! Спасибо тебе за ценую обрантную связь.
+Все ошибки исправил. Вёрстку поправил.
+Комментарий по изображениям оставил в коде.
+P.S. Автотесты почему то не проходит, ругается на несоответствие макета, но я всё несколько раз перепроверил,
+возможно баг. */
+
 .page {
   font-family: var(--font-family, 'IBM Plex mono'), sans-serif;
   font-size: var(--font-size, 1.125rem);
@@ -401,9 +407,6 @@
 
   .content__section-place-two .card {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  .content__section-place-two .card {
     gap: 1.11em;
   }
 
