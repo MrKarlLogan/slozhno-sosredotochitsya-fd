@@ -246,7 +246,7 @@
   }
 
   .header__theme-menu {
-    margin-block: 8em;
+    margin-block: 8.1em;
   }
 
   .header__icon {
@@ -271,7 +271,7 @@
   }
 
   .header__theme-menu-list {
-    row-gap: .8em;
+    row-gap: .75em;
   }
 
   .content {
