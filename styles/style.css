@@ -5,39 +5,42 @@
   background-image: var(--bg-image);
   background-repeat: no-repeat;
   background-position: top center;
+  background-size: cover;
   background-size: min(59.5em);
   background-attachment: fixed;
-  padding: var(--padding-page, 0.55em);
   line-height: var(--line-height, 1.3em);
-  display: grid;
-  grid-template-columns: 1fr;
+  color: var(--text-color, #F1B2CE);
+  overflow-x: hidden;
 }
 
 .header {
   min-block-size: 668px;
   block-size: 100vh;
-  /* При добавлении block-size всё едет. Я не понимаю, это баг девтула или нет. Часть изображения прячется.
-  Хотя, есть выставлять четкие разрешения из макета, то всё прям очень хорошо смотрится. */
   display: grid;
   grid-template-columns: 1fr;
+  grid-template-rows: min-content repeat(3, 1fr) min-content;
+  padding: var(--padding-page, 0.55em);
+}
+
+.decorated-zone {
   position: relative;
 }
 
-.header::before {
+.decorated-zone::before {
   content: '';
   inline-size: 1.39em;
   block-size: 1.39em;
   justify-self: flex-end;
-  border-block-start: 0.06em solid var(--accent-color, #FF0070);
-  border-inline-end: 0.06em solid var(--accent-color, #FF0070);
+  border-block-start: 0.06em solid var(--other-color, #FF0070);
+  border-inline-end: 0.06em solid var(--other-color, #FF0070);
 }
 
-.header::after {
+.decorated-zone::after {
   content: '';
   inline-size: 1.39em;
   block-size: 1.39em;
-  border-inline-start: 0.06em solid var(--accent-color, #FF0070);
-  border-block-end: 0.06em solid var(--accent-color, #FF0070);
+  border-inline-start: 0.06em solid var(--other-color, #FF0070);
+  border-block-end: 0.06em solid var(--other-color, #FF0070);
 }
 
 .header__icon {
@@ -45,8 +48,9 @@
   display: flex;
   align-items: center;
   column-gap: 0.5em;
+  inset-inline-end: calc(var(--padding-page) * 2);
+  inset-block-start: calc(var(--padding-page));
   position: absolute;
-  inset-inline-end: 0.55em;
   -webkit-user-select: none;
   user-select: none;
 }
@@ -55,23 +59,23 @@
   content: '';
   inline-size: 0.5em;
   block-size: 0.5em;
-  background-color: var(--accent-color, #FF0070);
+  background-color: var(--other-color, #FF0070);
   border-radius: 100%;
-  box-shadow: 0 0 0.22em 0.11em var(--accent-color, #FF0070);
+  box-shadow: 0 0 0.22em 0.11em var(--other-color, #FF0070);
 }
 
 .header__theme-menu {
-  color: var(--accent-color, #FF0070);
   display: flex;
   flex-direction: column;
   justify-self: end;
-  margin-block: 2.22em;
+  align-self: center;
+  margin-block-end: 1.2em;
 }
 
 .header__theme-menu-list {
   display: flex;
   flex-direction: column;
-  row-gap: 0.45em;
+  row-gap: 0.5em;
 }
 
 .header__theme-menu-item {
@@ -82,6 +86,7 @@
 }
 
 .header__theme-menu-button {
+  color: var(--other-color, #FF0070);
   background-color: transparent;
   padding-inline: 0.72em;
   text-transform: lowercase;
@@ -91,12 +96,10 @@
 
 .header__theme-menu-button_active {
   pointer-events: none;
-  border: 0.06em solid var(--accent-color, #FF0070)
+  border: 0.06em solid var(--other-color, #FF0070)
 }
 
 .header__theme-menu-button:hover {
-  --border-hover: 255 0 112;
-  --border-opacity: 0.4;
   border: 0.06em solid rgb(var(--border-hover, 255 0 112) / var(--border-opacity, 0.4));
 }
 
@@ -105,30 +108,32 @@
 }
 
 .header__theme-menu-button:focus-visible {
-  box-shadow: 0 0.06em 0 0 var(--accent-color, #FF0070);
+  box-shadow: 0 0.06em 0 0 var(--other-color, #FF0070);
 }
 
 .header__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--logo-size);
   color: var(--title-color, #DB00FF);
   line-height: 83%;
   text-shadow: 0.03em 0.03em var(--accent-color, #FF0070);
-  margin-block-start: 0.21em;
-  margin-block-end: 0.47em;
+  align-self: center;
 }
 
 .header__text {
+  block-size: min-content;
   color: var(--card-title-color, #000028);
   background-color: var(--accent-color, #FF0070);
   font-weight: bold;
-  margin-block-end: 1.66em;
+  align-self: center;
+  margin-block-start: 1em;
 }
 
 .content {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2.78em;
-  margin-block-start: 2.78em;
+  padding-inline: var(--padding-page, 0.55em);
+  margin-block-start: 2.3em;
 }
 
 .content__section {
@@ -138,7 +143,7 @@
 
 .content__title {
   font-size: var(--font-size, 1.125rem);
-  color: var(--accent-color, #FF0070);
+  color: var(--other-title-color, #FF0070);
 }
 
 .card {
@@ -156,6 +161,7 @@
 }
 
 .card__title {
+  block-size: min-content;
   color: var(--card-title-color, #000028);
   background-color: var(--accent-color, #FF0070);
   font-size: var(--font-size, 1.125rem);
@@ -193,6 +199,7 @@
 }
 
 .content-image__title {
+  color: var(--card-title-color);
   font-size: var(--font-size, 1.125rem);
   background-color: var(--accent-color, #FF0070);
 }
@@ -206,96 +213,95 @@
 .footer {
   min-block-size: 668px;
   block-size: 100vh;
-  /* При добавлении block-size всё едет. Я не понимаю, это баг девтула или нет. Часть изображения прячется.
-  Хотя, есть выставлять четкие разрешения из макета, то всё прям очень хорошо смотрится. */
-  margin-block-start: 2.6em;
   display: grid;
-}
-
-.footer::before {
-  content: '';
-  inline-size: 1.39em;
-  block-size: 1.39em;
-  justify-self: flex-end;
-  border-block-start: 0.06em solid var(--accent-color, #FF0070);
-  border-inline-end: 0.06em solid var(--accent-color, #FF0070);
-}
-
-.footer::after {
-  content: '';
-  inline-size: 1.39em;
-  block-size: 1.39em;
-  border-inline-start: 0.06em solid var(--accent-color, #FF0070);
-  border-block-end: 0.06em solid var(--accent-color, #FF0070);
+  grid-template-rows: min-content 1fr min-content;
+  margin-block-start: 1.8em;
+  padding: var(--padding-page, 0.55em);
 }
 
 .footer__title {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--logo-size);
   color: var(--title-color, #DB00FF);
   line-height: 83%;
   text-shadow: 0.03em 0.03em #FF0070;
   display: grid;
   justify-content: center;
-  padding-block: 2.155em;
+  align-self: center;
+  padding-block: 2em;
 }
 
 @media (width >= 768px) {
   .page {
-    --padding-page: 1.11em;
-    padding: var(--padding-page, 1.11em);
-    background-size: min(91em);
+    background-size: cover;
   }
 
   .header {
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
-
-  .header::before {
-    grid-column: 2;
+    --padding-page: 1.11em;
   }
 
   .header__theme-menu {
-    margin-block: 8.13em;
-    grid-column: 2;
+    margin-block: 8em;
+  }
+
+  .header__icon {
+    inset-inline-end: calc(var(--padding-page) * 1.5);
   }
 
   .header__title {
     position: relative;
-    grid-column: -1 / 1;
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+    font-size: var(--logo-size);
     inline-size: calc(100% + (0.16em * 2));
     inset-inline-end: 0.16em;
+    margin-block-start: 0.25em;
+    margin-block-end: 0.8em;
   }
 
   .header__text {
-    margin-block-start: 6em;
-    grid-column: 2;
+    inline-size: 50%;
+    justify-self: end;
+    margin-block-start: 3.5em;
     margin-block-end: 7.55em;
   }
 
+  .header__theme-menu-list {
+    row-gap: 0.5em;
+  }
+
   .content {
-    margin-block-start: 4.45em;
+    --padding-page: 1.11em;
+    margin-block-start: 3.3em;
     row-gap: 4.44em;
   }
 
-  .content__section:nth-of-type(even) {
+  .content__section-place-two {
     grid-template-columns: 20% 80%;
-    grid-template-rows: repeat(2, auto);
+    grid-template-rows: auto auto;
   }
 
-  .content__section:nth-of-type(even) .card {
+  .content__section-place-two .card {
     grid-column: -1 / 1;
-    grid-row: 2;
   }
 
-  .content__section:nth-of-type(odd) {
+  .content__section-place-one, .content__section-place-three {
     grid-template-columns: 1fr 2fr;
     column-gap: 1.11em;
   }
 
+  .content__section-place-three .content__title {
+    grid-column: 1;
+    grid-row: 1 / 3;
+  }
+
+  .card__title-grid-position {
+    grid-column: 2;
+  }
+
+  .content__section-place-three .card {
+    grid-column: 2;
+  }
+
   .content-image__section {
-    row-gap: 1.1em;
+    row-gap: 1em;
   }
 
   .content-image__list {
@@ -334,22 +340,19 @@
   }
 
   .footer {
-    margin-block-start: 3.65em;
+    --padding-page: 1.11em;
+    margin-block-start: 2.5em;
   }
 
   .footer__title {
-    padding-block-start: 3.5em;
-    padding-block-end: 3.45em;
+    padding-block: 3.48em;
   }
 }
 
 @media (width >= 1024px) {
-  .page {
-    background-size: min(68.5em);
-  }
-
-  .header::before {
-    grid-row: 1;
+  .header {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: min-content 1fr 1fr min-content;
   }
 
   .header__theme-menu {
@@ -361,47 +364,60 @@
 
   .header__theme-menu-list {
     flex-direction: row;
-    row-gap: 0;
     column-gap: 0.5em;
   }
 
   .header__title {
+    grid-column: -1 / 1;
     inset-inline-end: 0.13em;
     margin-block-start: 1.73em;
-    margin-block-end: 0.04em;
+    margin-block-end: 0em;
   }
 
   .header__text {
-    margin-block-end: 5em;;
+    inline-size: 100%;
+    justify-self: initial;
+    margin: 0;
   }
 
-  .content__section:nth-of-type(odd) {
+  .decorated-zone::before {
+    grid-column: 2;
+    grid-row: 1;
+  }
+  
+  .decorated-zone::after {
+    grid-column: 1;
+    grid-row: 3;
+    align-self: end;
+  }
+
+  .content__section-place-two {
+    grid-template-columns: 30% 70%;
+  }
+
+  .content__section-place-one, .content__section-place-three {
     column-gap: 0.5em;
   }
 
-  .content__section:nth-of-type(even) {
+  .content__section-place-two .card {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .content__section:nth-of-type(even) .card .card__list:first-child {
-    grid-column: 1;
-  }
-
-  .content__section:nth-of-type(even) .card .card__list:nth-last-child(2) {
-    grid-column: 2;
-  }
-
-  .content__section:nth-of-type(even) .card .card__list:last-child {
-    grid-column: 3;
-  }
-
-  .content__section:nth-of-type(even) .card {
+  .content__section-place-two .card {
     word-break: break-word;
     gap: 1.11em;
   }
 
+  .footer {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+  }
+
   .footer__title {
-    font-size: clamp(9.8125rem, -2.8772rem + 19.8276vw, 11.25rem);
+    grid-column: -1 / 1;
+    grid-row: -1 / 1;
+    font-size: var(--logo-size);
     padding-block: 1.75em;
+    align-self: center;
   }
 }

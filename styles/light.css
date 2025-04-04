@@ -2,100 +2,32 @@
   --bg-color: #FFF1F7;
   --title-color: #FFC2E6;
   --accent-color: #FF8DCB;
-  --card-title-color: #000028;
-  --text-color: #353430;
-  --bg-image: url(/images/cover-image-light.png);
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    --bg-color: #FFF1F7;
-    --title-color: #FFC2E6;
-    --accent-color: #FF8DCB;
-    --card-title-color: #000028;
-    --text-color: #353430;
-    --bg-image: url(/images/cover-image-light.png);
-  }
-
-  .theme-auto .header__icon {
-    display: none;
-  }
-  
-  .theme-auto .header__theme-menu-button_active {
-    --accent-color: var(--text-color, #353430);
-  }
-  
-  .theme-auto .header__theme-menu-button:hover {
-    --border-hover: 53 52 48;
-    --border-opacity: 0.4;
-  }
-  
-  .theme-auto .header__theme-menu-button:focus {
-    outline: none;
-  }
-  
-  .theme-auto .header__theme-menu-button:focus-visible {
-    --accent-color: var(--text-color, #353430);
-  }
-  
-  .theme-auto .header__theme-menu-item {
-    --accent-color: var(--text-color);
-  }
-  
-  .theme-auto .header::before {
-    --accent-color: var(--text-color);
-  }
-  
-  .theme-auto .header::after {
-    --accent-color: var(--text-color);
-  }
-  
-  .theme-auto .footer::before {
-    --accent-color: var(--text-color);
-  }
-  
-  .theme-auto .footer::after {
-    --accent-color: var(--text-color);
-  }
+  --card-title-color: #353430;
+  --other-title-color: var(--card-title-color);
+  --text-color: var(--card-title-color);
+  --border-hover: 53 52 48;
+  --other-color: var(--text-color);
+  --bg-image: url(../images/cover-image-light.png);
 }
 
 .theme-light .header__icon {
   display: none;
 }
 
-.theme-light .header__theme-menu-button_active {
-  --accent-color: var(--text-color, #353430);
-}
+@media (prefers-color-scheme: light) {
+  :root.theme-auto {
+    --bg-color: #FFF1F7;
+    --title-color: #FFC2E6;
+    --accent-color: #FF8DCB;
+    --card-title-color: #353430;
+    --other-title-color: var(--card-title-color);
+    --text-color: var(--card-title-color);
+    --border-hover: 53 52 48;
+    --other-color: var(--text-color);
+    --bg-image: url(../images/cover-image-light.png);
+  }
 
-.theme-light .header__theme-menu-button:hover {
-  --border-hover: 53 52 48;
-  --border-opacity: 0.4;
-}
-
-.theme-light .header__theme-menu-button:focus {
-  outline: none;
-}
-
-.theme-light .header__theme-menu-button:focus-visible {
-  --accent-color: var(--text-color, #353430);
-}
-
-.theme-light .header__theme-menu-item {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .header::before {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .header::after {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .footer::before {
-  --accent-color: var(--text-color);
-}
-
-.theme-light .footer::after {
-  --accent-color: var(--text-color);
+  .theme-auto .header__icon {
+    display: none;
+  }
 }
