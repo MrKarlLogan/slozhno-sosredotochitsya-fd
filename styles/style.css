@@ -6,7 +6,6 @@
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
-  background-size: min(59.5em);
   background-attachment: fixed;
   line-height: var(--line-height, 1.3em);
   color: var(--text-color, #F1B2CE);
@@ -306,7 +305,8 @@
 
   .content-image__list {
     grid-template-columns: repeat(3, 1fr);
-    grid-template-rows: minmax(min-content, max-content); /*Немного поехало, как только img заменил на picture и прописал все srcset. Конвертировал всё через https://squoosh.app/. С img было вообще px в px. Пришлось шаманить. Но без фиксирования высоты в абсолютных единицах, повторить точь в точь макет не получается. Т.к. у нас адаптив, то и абсолютные единицы мы убирает...*/
+    grid-template-rows: minmax(min-content, max-content);
+    /* Немного поехало, как только img заменил на picture и прописал все srcset. Конвертировал всё через https://squoosh.app/. С img было вообще px в px. Пришлось шаманить. Но без фиксирования высоты в абсолютных единицах, повторить точь в точь макет не получается. Т.к. у нас адаптив, то и абсолютные единицы мы убирает... */
     gap: 1.11em;
   }
 
@@ -404,7 +404,6 @@
   }
 
   .content__section-place-two .card {
-    word-break: break-word;
     gap: 1.11em;
   }
 
