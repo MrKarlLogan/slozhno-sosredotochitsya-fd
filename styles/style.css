@@ -1,9 +1,3 @@
-/* Привет! Спасибо тебе за ценую обрантную связь.
-Все ошибки исправил. Вёрстку поправил.
-Комментарий по изображениям оставил в коде.
-P.S. Автотесты почему то не проходит, ругается на несоответствие макета, но я всё несколько раз перепроверил,
-возможно баг. */
-
 .page {
   font-family: var(--font-family, 'IBM Plex mono'), sans-serif;
   font-size: var(--font-size, 1.125rem);
@@ -74,7 +68,7 @@ P.S. Автотесты почему то не проходит, ругаетс�
   flex-direction: column;
   justify-self: end;
   align-self: center;
-  margin-block-end: 1.2em;
+  margin-block-end: 1.3em;
 }
 
 .header__theme-menu-list {
@@ -136,7 +130,7 @@ P.S. Автотесты почему то не проходит, ругаетс�
 .content {
   display: grid;
   grid-template-columns: 1fr;
-  row-gap: 2.78em;
+  row-gap: 2.75em;
   padding-inline: var(--padding-page, 0.55em);
   margin-block-start: 2.3em;
 }
@@ -195,12 +189,17 @@ P.S. Автотесты почему то не проходит, ругаетс�
 
 .content-image__section {
   display: grid;
-  row-gap: 0.32em;
+  row-gap: 0.5em;
+}
+
+.content-image__box {
+  display: flex;
+  justify-content: center;
 }
 
 .content-image__list {
   display: grid;
-  row-gap: 0.3em;
+  row-gap: 0.6em;
 }
 
 .content-image__title {
@@ -212,7 +211,7 @@ P.S. Автотесты почему то не проходит, ругаетс�
 .content-image__item {
   inline-size: 100%;
   block-size: 100%;
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .footer {
@@ -220,7 +219,7 @@ P.S. Автотесты почему то не проходит, ругаетс�
   block-size: 100vh;
   display: grid;
   grid-template-rows: min-content 1fr min-content;
-  margin-block-start: 1.8em;
+  margin-block-start: 2.1em;
   padding: var(--padding-page, 0.55em);
 }
 
@@ -313,7 +312,6 @@ P.S. Автотесты почему то не проходит, ругаетс�
   .content-image__list {
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: minmax(min-content, max-content);
-    /* Немного поехало, как только img заменил на picture и прописал все srcset. Конвертировал всё через https://squoosh.app/. С img было вообще px в px. Пришлось шаманить. Но без фиксирования высоты в абсолютных единицах, повторить точь в точь макет не получается. Т.к. у нас адаптив, то и абсолютные единицы мы убирает... */
     gap: 1.11em;
   }
 
@@ -348,7 +346,7 @@ P.S. Автотесты почему то не проходит, ругаетс�
 
   .footer {
     --padding-page: 1.11em;
-    margin-block-start: 2.5em;
+    margin-block-start: 3.4em;
   }
 
   .footer__title {
