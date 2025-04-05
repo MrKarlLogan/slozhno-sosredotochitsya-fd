@@ -281,30 +281,30 @@
     row-gap: 4.44em;
   }
 
-  .content__section_position-concentration {
+  .content__section_persistent-columns {
     grid-template-columns: 20% 80%;
     grid-template-rows: auto auto;
   }
 
-  .content__section_position-concentration .card {
+  .content__section_persistent-columns .card {
     grid-column: -1 / 1;
   }
 
-  .content__section_position-focus, .content__section_position-advices {
+  .content__section_changing-columns {
     grid-template-columns: 1fr 2fr;
     column-gap: 1.11em;
   }
 
-  .content__section_position-advices .content__title {
+  .content__section_changing-columns:has(.card__title_position-colums) .content__title {
     grid-column: 1;
     grid-row: 1 / 3;
   }
 
-  .card__title-grid-position {
+  .card__title_position-colums {
     grid-column: 2;
   }
 
-  .content__section_position-advices .card {
+  .content__section_changing-columns .card {
     grid-column: 2;
   }
 
@@ -404,15 +404,20 @@
     align-self: end;
   }
 
-  .content__section_position-concentration {
+  .content__section_changing-columns {
+    grid-template-columns: 1fr 2fr;
+    column-gap: .6em;
+}
+
+  .content__section_persistent-columns {
     grid-template-columns: 30% 70%;
   }
 
-  .content__section_position-focus, .content__section_position-advices {
+  .content__changing-columns {
     column-gap: .5em;
   }
 
-  .content__section_position-concentration .card {
+  .content__section_persistent-columns .card {
     grid-template-columns: repeat(3, 1fr);
     gap: 1.11em;
   }
