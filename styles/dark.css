@@ -3,6 +3,13 @@
   --title-color: #DB00FF;
   --accent-color: #FF0070;
   --card-title-color: #000028;
+  --other-title-color: var(--accent-color);
   --text-color: #F1B2CE;
+  --border-hover: 255 0 112;
+  --other-color: var(--accent-color);
   --bg-image: url(../images/cover-image-dark.png);
+}
+
+.theme-dark .header__icon {
+  display: flex;
 }

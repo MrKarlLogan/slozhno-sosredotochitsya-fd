@@ -138,7 +138,7 @@
 
 .content__section {
   display: grid;
-  row-gap: 1.11em;
+  row-gap: 1.1em;
 }
 
 .content__title {
@@ -254,10 +254,10 @@
 
   .header__title {
     --padding-page: 20px;
+    --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     width: calc(100% + (var(--padding-page) * 2));
     inset-inline-end: var(--padding-page);
     position: relative;
-    font-size: var(--logo-size);
     margin-block-start: .25em;
     margin-block-end: .8em;
   }
@@ -347,6 +347,7 @@
 
   .footer {
     --padding-page: 1.11em;
+    --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-block-start: 3.25em;
   }
 
@@ -376,7 +377,7 @@
   .header__title {
     text-align: start;
     grid-column: -1 / 1;
-    margin-block-start: 1.73em;
+    margin-block-start: 1.75em;
     margin-block-end: 0;
     justify-self: start;
   }
@@ -407,7 +408,7 @@
   }
 
   .why, .advices {
-    column-gap: .5em;
+    column-gap: .6em;
   }
 
   .causes .card {
